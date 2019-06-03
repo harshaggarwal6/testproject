@@ -30,6 +30,9 @@ public class App {
 	private final static String IMAGE_KIT_IMAGE_UPLOAD_URL = "https://upload.imagekit.io/rest/api/image/v2/demoTest/";
 	private final static String imagePath = "https://pixabay.com/get/57e0d2414250af14f6da8c7dda793e7b173dd6e6514c704c70267ed19545c550_1280.jpg";
 
+	public static void main(String[] args) throws UnirestException {
+		//App.main();
+	}
 	public static JSONObject main() throws UnirestException, IOException {
 		if(Files.exists(Paths.get(""))) {
 			
