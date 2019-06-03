@@ -26,7 +26,7 @@ public class App {
 	private final static String IMAGE_KIT_IMAGE_UPLOAD_URL = "https://upload.imagekit.io/rest/api/image/v2/demoTest/";
 	private final static String imagePath = "/home/harsh.kumar1/Downloads/SampleJPGImage_200kbmb (5).jpg";
 
-	public static void main() throws UnirestException {
+	public static JSONObject main() throws UnirestException {
 		if(Files.exists(Paths.get(""))) {
 			
 		}
@@ -45,8 +45,10 @@ public class App {
 					.asJson();
 			JSONObject jsonResponse = uploadResponse.getBody().getObject();
 			System.out.println(jsonResponse.toString());
+			return jsonResponse;
 		} catch (UnirestException e) {
 			e.printStackTrace();
+			throw e;
 		}
 	}
 
