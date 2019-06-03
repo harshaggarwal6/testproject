@@ -24,12 +24,15 @@ public class App {
 	 private final static String PUBLIC_API_KEY = "Zrso5Pq4YXtBzDIvNm3ZEjKjCZU=";
 	    private final static String PRIVATE_API_KEY = "qN5TAompCPTw6guUunXYXSyHX0Y=";
 	private final static String IMAGE_KIT_IMAGE_UPLOAD_URL = "https://upload.imagekit.io/rest/api/image/v2/demoTest/";
-	private final static String imagePath = "/home/harsh.kumar1/Downloads/SampleJPGImage_200kbmb (5).jpg";
+	private final static String imagePath = "https://pixabay.com/get/57e0d2414250af14f6da8c7dda793e7b173dd6e6514c704c70267ed19545c550_1280.jpg";
 
-	public static void main() throws UnirestException {
+	public static void main(String[] args) throws UnirestException {
+		App.main();
+	}
+	public static JSONObject main() throws UnirestException {
 		if(Files.exists(Paths.get(""))) {
 			
-		}
+		}//https://pixabay.com/get/57e0d2414250af14f6da8c7dda793e7b173dd6e6514c704c70267ed19545c550_1280.jpg
 		File file = new File(imagePath);
 		String filename = file.getName().toString();
 		String time = timestamp();
@@ -45,8 +48,10 @@ public class App {
 					.asJson();
 			JSONObject jsonResponse = uploadResponse.getBody().getObject();
 			System.out.println(jsonResponse.toString());
+			return jsonResponse;
 		} catch (UnirestException e) {
 			e.printStackTrace();
+			throw e;
 		}
 	}
 

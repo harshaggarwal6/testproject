@@ -20,7 +20,7 @@ public class HelloController {
 	@GetMapping
 	public String hello() throws IOException, UnirestException {
 
-		app.main();
-		return "hello heroku, mail send--" + example.main();
+		
+		return "hello heroku, mail send--" + app.main();
 	}
 }
